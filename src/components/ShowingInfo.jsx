@@ -2,7 +2,7 @@ import { calendarIcon, chareIcon, timeIcon } from "../assets";
 import BookedState from "./BookedState";
 import Calendar from "./Calendar";
 
-const ShowingInfo = () => {
+const ShowingInfo = ({status, time}) => {
   return (
     <div className="flex-1 p-3 rounded-2xl shadow-darkShadow bg-white dark:bg-dark">
       <ul className="hidden justify-between items-center gap-4 mb-3 sm:flex">
@@ -40,7 +40,7 @@ const ShowingInfo = () => {
       <div className="flex justify-center items-center flex-wrap gap-y-4 sm:justify-between">
         <Calendar />
 
-        <BookedState />
+        <BookedState status={status} />
 
         <div className="flex flex-col items-center justify-center w-44">
           <p className="text-dark font-light text-base dark:text-white">
@@ -48,7 +48,7 @@ const ShowingInfo = () => {
           </p>
 
           <p className="text-primary text-2xl font-light my-1">
-            10:35:59
+            {time}
           </p>
 
           <p className="text-dark text-base font-light dark:text-white">

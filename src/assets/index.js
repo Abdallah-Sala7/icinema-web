@@ -55,3 +55,10 @@ export { default as adminTimelineImg } from "./icons/admin_timeline.svg";
 export { default as adminOwnerImg } from "./icons/owner.svg";
 export { default as adminProfileImg } from "./icons/profile.svg";
 
+
+export { default as poster1Img } from "./images/poster1.png";
+export { default as poster2Img } from "./images/poster2.png";
+export { default as poster3Img } from "./images/poster3.png";
+export { default as poster4Img } from "./images/poster4.png";
+
+

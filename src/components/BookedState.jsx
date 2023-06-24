@@ -2,13 +2,13 @@ import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
 const percentage = 220;
-const valueMax = 294;
+const valueMax = 300;
 
-const BookedState = () => {
+const BookedState = ({status}) => {
   return (
     <div className="hidden items-center justify-center relative w-36 mx-4 px-4 border-x-2 border-primary sm:flex">
       <CircularProgressbar
-        value={percentage}
+        value={status}
         maxValue={valueMax}
         styles={{
           root: {
@@ -32,7 +32,7 @@ const BookedState = () => {
 
       <div className="w-24 h-24 p-2 bg-lightGray rounded-full flex flex-col items-center justify-center dark:bg-darkGray">
         <h1 className="w-8/12 text-dark text-center text-lg pb-1 mb-1 border-b-2 border-primary dark:text-white">
-          {percentage}
+          {status}
         </h1>
 
         <p className="text-center text-xs font-light text-dark dark:text-white">

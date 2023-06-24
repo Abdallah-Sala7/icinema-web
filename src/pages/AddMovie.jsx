@@ -3,10 +3,12 @@ import SelectOptions from "../components/SelectBox";
 import { genres, language } from "../data/selectData";
 import { uploadIcon } from "../assets";
 import Controltop from "../components/Controltop";
-import { Link } from "react-router-dom";
+import { Link, useNavigation } from "react-router-dom";
 import { useAddMovieMutation } from "../app/server/addMovieApi";
+import { useSelector } from "react-redux";
 
 const AddMovie = () => {
+  const navigat = useNavigation();
   const [name, setName] = useState("");
   const [starring, setStarring] = useState("");
   const [genre, setGenre] = useState("");
@@ -35,8 +37,8 @@ const AddMovie = () => {
 
   const userData = JSON.parse(localStorage.getItem("user"));
 
-  const handleAddMovie = async () => {
-    const movieData = {
+  const handleAddMovie = () => {
+    const movieData = JSON.stringify({
       name,
       starring,
       genre,
@@ -44,25 +46,13 @@ const AddMovie = () => {
       duration,
       release_date: releaseDate,
       audience,
-      image: poster,
-      trailer,
+      image: URL.createObjectURL(poster),
       brief,
       category_id: 2,
       cinema_id: userData.id,
-    };
-
-    await postMovie(movieData);
+      trailer: URL.createObjectURL(trailer),
+    });
   };
-
-  useEffect(() => {
-    if (isLoading) {
-      console.log("loading");
-    } else if (isSuccess) {
-      console.log(data);
-    } else if (isError) {
-      console.log(error);
-    }
-  }, [isLoading, isSuccess, isError, data, error]);
 
   return (
     <section>
@@ -164,7 +154,7 @@ const AddMovie = () => {
               Release date
             </label>
             <input
-              type="time"
+              type="date"
               id="releaseDate"
               onChange={(e) => setReleaseDate(e.target.value)}
               className="w-full h-full py-2 pl-4 border-none focus:ring-0 rounded-xl shadow-md text-dark font-light dark:bg-dark dark:shadow-darkShadow dark:text-white"
@@ -201,20 +191,20 @@ const AddMovie = () => {
                 type="file"
                 name="selectPoster"
                 id="selectPoster"
-                onChange={(e) => setPoster(e.target.files[0])}
+                onChange={(e) => setPoster(e.target.value)}
                 className="hidden"
               />
             </div>
 
             <div className="flex-1">
               <label
-                htmlFor="selectPoster"
+                htmlFor="selectTrialer"
                 className="inline-block mb-2 capitalize font-light text-dark text-lg dark:text-white placeholder:text-white"
               >
                 Trailer
               </label>
               <label
-                htmlFor="selectPoster"
+                htmlFor="selectTrialer"
                 className="cursor-pointer flex flex-col py-8 px-4 text-center items-center gap-3 w-full rounded-lg border-2 border-primary border-dashed bg-lightGray dark:bg-dark"
               >
                 <img
@@ -230,8 +220,8 @@ const AddMovie = () => {
 
               <input
                 type="file"
-                name="selectPoster"
-                id="selectPoster"
+                name="selectTrialer"
+                id="selectTrialer"
                 onChange={(e) => setTrailer(e.target.files[0])}
                 className="hidden"
               />
@@ -259,7 +249,7 @@ const AddMovie = () => {
       </div>
 
       <Link
-        to="/profile/show-days"
+        to={"/profile/show-days"}
         className="ml-auto text-xl font-thin capitalize block w-fit py-2 px-10 bg-primary border border-primary transition duration-300 text-dark rounded-md hover:text-primary hover:bg-transparent"
       >
         next

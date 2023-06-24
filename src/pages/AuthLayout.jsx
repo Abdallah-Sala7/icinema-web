@@ -23,8 +23,8 @@ function AuthLayout() {
         </div>
 
         <div className="w-full min-h-screen lg:w-1/2 lg:pl-28">
-          <div className="bg-primary p-1.5 h-full">
-            <div className="relative h-full px-4 pt-16 pb-10 bg-lightGray rounded-xl dark:bg-darkGray md:px-16">
+          <div className="bg-primary pl-1.5 h-full">
+            <div className="relative h-full px-4 pt-16 pb-10 bg-lightGray dark:bg-darkGray md:px-16">
               <SwitchBtns />
 
               <Outlet />

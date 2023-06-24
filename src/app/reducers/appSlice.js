@@ -494,6 +494,7 @@ const initialState = {
       ],
     },
   ],
+  cinemaMovie: [],
 };
 
 export const appSlice = createSlice({
@@ -507,8 +508,12 @@ export const appSlice = createSlice({
     setNewHall: (state, action) => {
       state.cinemaHalls.push(action.payload);
     },
+
+    setNewMovie: (state, action) => {
+      state.cinemaMovie.push(action.payload);
+    },
   },
 });
 
-export const { setAsideBar, setNewHall } = appSlice.actions;
+export const { setAsideBar, setNewHall, setNewMovie } = appSlice.actions;
 export default appSlice.reducer;

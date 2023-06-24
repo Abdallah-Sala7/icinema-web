@@ -4,7 +4,6 @@ import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./app/store";
-// import 'flowbite';
 
 import {
   RootLayout,
@@ -19,11 +18,12 @@ import { LoginForm, SignupForm } from "./components";
 import AddMovie from "./pages/AddMovie";
 import ShowDays from "./pages/ShowDays";
 import BookMovie from "./pages/BookMovie";
+import WithGaurd from "./components/WithGaurd";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <RootLayout />,
+    element: <WithGaurd><RootLayout /></WithGaurd> ,
     children: [
       { index: true, element: <Admin /> },
       { path: "profile", element: <Profile /> },

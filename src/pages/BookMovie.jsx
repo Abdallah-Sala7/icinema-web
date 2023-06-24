@@ -6,12 +6,15 @@ import { hallTowChairs } from "../components/txt";
 import HallChairs from "../components/HallChairs";
 import SelectOptions from "../components/SelectBox";
 import { useSelector } from "react-redux";
-import { chairIcon } from "../assets";
+import { chairIcon, poster3Img } from "../assets";
+import Controltop from "../components/Controltop";
+import AddMovieSuccess from "../components/AddMovieSucces";
 
 const BookMovie = () => {
   const [activeTab, setActiveTab] = useState("hall 1");
   const [halls, setHalls] = useState({});
   const [selectedChairs, setSelectedChairs] = useState([]);
+  const [success, setSuccess] = useState(false);
 
   const [chairsType, setChairsType] = useState({
     premium: [],
@@ -54,8 +57,10 @@ const BookMovie = () => {
 
   return (
     <>
+      <Controltop />
+
       <h1 className="mb-5 text-xl dark:text-white font-thin md:text-2xl">
-        Book: Black Adam
+        Book: NABIL EL GAMIL DR. TAGMEEL
       </h1>
 
       <div className="mb-5">
@@ -64,11 +69,11 @@ const BookMovie = () => {
             releaseDate={"28/12/2022"}
             starring={"mohamed tharwat"}
             title={"Nabil elgameel Dr tagmeel"}
-            img={"https://assets.voxcinemas.com/posters/P_HO00009956.jpg"}
+            img={poster3Img}
             features={["Comedy", "105min", "Egyptian", "Arabic"]}
           />
 
-          <ShowingInfo />
+          <ShowingInfo time={"09:40:59"} status={240} />
         </div>
       </div>
 
@@ -137,12 +142,19 @@ const BookMovie = () => {
           </div>
 
           <div className="flex">
-            <button className="block text-center w-full font-thin capitalize py-2 px-10 bg-primary border border-primary transition duration-300 text-dark rounded-md hover:text-primary hover:bg-transparent">
+            <button
+              onClick={() => setSuccess(true)}
+              className="block text-center w-full font-thin capitalize py-2 px-10 bg-primary border border-primary transition duration-300 text-dark rounded-md hover:text-primary hover:bg-transparent"
+            >
               save booking
             </button>
           </div>
         </div>
       </div>
+
+      {success && (
+        <AddMovieSuccess back={"/boking"} title={"Booked successfully"} />
+      )}
     </>
   );
 };

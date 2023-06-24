@@ -6,7 +6,7 @@ const userData = JSON.parse(localStorage.getItem("user"));
 const headers = {
   "Content-Type": "application/json",
   Accept: "application/json",
-  Authorization: `Bearer ${userData.token}`,
+  Authorization: `Bearer ${userData?.token}`,
 };
 
 export const addMovieApi = createApi({

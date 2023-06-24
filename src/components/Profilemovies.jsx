@@ -2,7 +2,7 @@ import { useState } from "react";
 import Moviecard from "./Moviecard";
 import Searchinput from "./Searchinput";
 import Advertise from "./Advertise";
-import { editIcon } from "../assets";
+import { editIcon, poster2Img, poster3Img, poster1Img, poster4Img } from "../assets";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -37,11 +37,22 @@ function Profilemovies() {
             <SwiperSlide>
               {" "}
               <Moviecard
-                releaseDate={"28/12/2022"}
-                starring={"mohamed tharwat"}
-                title={"Nabil elgameel Dr tagmeel"}
-                img={"https://assets.voxcinemas.com/posters/P_HO00009956.jpg"}
-                features={["Comedy", "105min", "Egyptian", "Arabic"]}
+                releaseDate={"14 Dec 2022"}
+                starring={"Zoe Saldana, Sam Worthington, Michelle Yeoh"}
+                title={"Avatar"}
+                img={poster1Img}
+                features={["Action", "130min", "EN", "+8"]}
+              />
+            </SwiperSlide>
+
+            <SwiperSlide>
+              {" "}
+              <Moviecard
+                releaseDate={"28 Dec 2022"}
+                starring={" Dwayne Johnson, Pierce Brosnan, Sarah Shahi"}
+                title={"Black Adam"}
+                img={poster2Img}
+                features={["Action", "105min", "+12", "EN"]}
               />
             </SwiperSlide>
 
@@ -51,18 +62,7 @@ function Profilemovies() {
                 releaseDate={"28/12/2022"}
                 starring={"mohamed tharwat"}
                 title={"Nabil elgameel Dr tagmeel"}
-                img={"https://assets.voxcinemas.com/posters/P_HO00009956.jpg"}
-                features={["Comedy", "105min", "Egyptian", "Arabic"]}
-              />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              {" "}
-              <Moviecard
-                releaseDate={"28/12/2022"}
-                starring={"mohamed tharwat"}
-                title={"Nabil elgameel Dr tagmeel"}
-                img={"https://assets.voxcinemas.com/posters/P_HO00009956.jpg"}
+                img={poster3Img}
                 features={["Comedy", "105min", "Egyptian", "Arabic"]}
               />
             </SwiperSlide>
@@ -72,18 +72,18 @@ function Profilemovies() {
                 releaseDate={"28/12/2022"}
                 starring={"mohamed tharwat"}
                 title={"Nabil elgameel Dr tagmeel"}
-                img={"https://assets.voxcinemas.com/posters/P_HO00009956.jpg"}
+                img={poster3Img}
                 features={["Comedy", "105min", "Egyptian", "Arabic"]}
               />
             </SwiperSlide>
             <SwiperSlide>
               {" "}
               <Moviecard
-                releaseDate={"28/12/2022"}
-                starring={"mohamed tharwat"}
-                title={"Nabil elgameel Dr tagmeel"}
-                img={"https://assets.voxcinemas.com/posters/P_HO00009956.jpg"}
-                features={["Comedy", "105min", "Egyptian", "Arabic"]}
+                releaseDate={"28 Dec 2022"}
+                starring={" Dwayne Johnson, Pierce Brosnan, Sarah Shahi"}
+                title={"Black Adam"}
+                img={poster2Img}
+                features={["Action", "105min", "+12", "EN"]}
               />
             </SwiperSlide>
             <SwiperSlide>
@@ -215,11 +215,13 @@ function Profilemovies() {
             <SwiperSlide>
               {" "}
               <Moviecard
-                releaseDate={"28/12/2022"}
-                starring={"mohamed tharwat"}
-                title={"Nabil elgameel Dr tagmeel"}
-                img={"https://assets.voxcinemas.com/posters/P_HO00009956.jpg"}
-                features={["Comedy", "105min", "Egyptian", "Arabic"]}
+                releaseDate={"14 jan 2023"}
+                starring={
+                  "Bayoumi Fouad, Hatem Salah, Ruby , Karim Mahmoud Abdel Aziz"
+                }
+                title={"Shalaby"}
+                img={poster4Img}
+                features={["Comedy", "150min", "Egyptian", "General audience"]}
               />
             </SwiperSlide>
 

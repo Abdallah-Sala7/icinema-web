@@ -10,11 +10,6 @@ function Controltop(props) {
     props.handleTap(tap);
   };
 
-  const user = (
-    <button className="px-5 py-1.5 bg-primary text-lg font-light rounded-lg border border-primary transition-colors sm:px-10 sm:py-2 md:px-20 hover:bg-transparent hover:text-primary">
-      user
-    </button>
-  );
 
   const movies_about = (
     <div className="flex rounded-tl-xl rounded-br-xl border border-primary overflow-hidden ">
@@ -60,7 +55,7 @@ function Controltop(props) {
           <h2 className="font-light">{userData.email}</h2>
         </div>
       </div>
-      {props.entry === "movies_about" ? movies_about : user}
+      {props.entry === "movies_about" ? movies_about : null}
     </div>
   );
 }

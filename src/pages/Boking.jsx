@@ -3,7 +3,7 @@ import ShowingInfo from '../components/ShowingInfo'
 import Controltop from '../components/Controltop'
 import { useState } from 'react'
 import BokingTable from '../components/BokingTable'
-import { searchIcon } from '../assets'
+import { poster1Img, poster2Img, poster3Img, searchIcon } from '../assets'
 
 const Boking = () => {
   const [activeTap, setActiveTap] = useState("");
@@ -51,14 +51,26 @@ const Boking = () => {
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-4 justify-center xl:flex-row">
             <Moviecard
-              releaseDate={"28/12/2022"}
-              starring={"mohamed tharwat"}
-              title={"Nabil elgameel Dr tagmeel"}
-              img={"https://assets.voxcinemas.com/posters/P_HO00009956.jpg"}
-              features={["Comedy", "105min", "Egyptian", "Arabic"]}
+              releaseDate={"14 Dec 2022"}
+              starring={"Zoe Saldana, Sam Worthington, Michelle Yeoh"}
+              title={"Avatar"}
+              img={poster1Img}
+              features={["Action", "130min", "EN", "+8"]}
             />
 
-            <ShowingInfo />
+            <ShowingInfo time={"03:40:59"} status={150} />
+          </div>
+
+          <div className="flex flex-col gap-4 justify-center xl:flex-row">
+            <Moviecard
+              releaseDate={"28 Dec 2022"}
+              starring={" Dwayne Johnson, Pierce Brosnan, Sarah Shahi"}
+              title={"Black Adam"}
+              img={poster2Img}
+              features={["Action", "105min", "+12", "EN"]}
+            />
+
+            <ShowingInfo time={"10:35:59"} status={250} />
           </div>
 
           <div className="flex flex-col gap-4 justify-center xl:flex-row">
@@ -66,23 +78,11 @@ const Boking = () => {
               releaseDate={"28/12/2022"}
               starring={"mohamed tharwat"}
               title={"Nabil elgameel Dr tagmeel"}
-              img={"https://assets.voxcinemas.com/posters/P_HO00009956.jpg"}
+              img={poster3Img}
               features={["Comedy", "105min", "Egyptian", "Arabic"]}
             />
 
-            <ShowingInfo />
-          </div>
-
-          <div className="flex flex-col gap-4 justify-center xl:flex-row">
-            <Moviecard
-              releaseDate={"28/12/2022"}
-              starring={"mohamed tharwat"}
-              title={"Nabil elgameel Dr tagmeel"}
-              img={"https://assets.voxcinemas.com/posters/P_HO00009956.jpg"}
-              features={["Comedy", "105min", "Egyptian", "Arabic"]}
-            />
-
-            <ShowingInfo />
+            <ShowingInfo time={"09:40:59"} status={240} />
           </div>
         </div>
       )}

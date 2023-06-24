@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const AddMovieSuccess = () => {
+const AddMovieSuccess = ({title, back}) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -31,11 +31,13 @@ const AddMovieSuccess = () => {
 
         <div className={`flex flex-col transition-all overflow-hidden ${isLoading ? 'h-0' : 'h-24'}`}>
           <h2 className="text-xl font-light text-dark dark:text-white text-center mb-auto">
-            Added successfully
+            {
+              title || "Movie added successfully"
+            }
           </h2>
 
           <Link
-            to={"/profile"}
+            to={back || "/profile"}
             className="block text-center w-full font-thin capitalize py-2 px-10 bg-primary border border-primary transition duration-300 text-dark rounded-md hover:text-primary hover:bg-transparent"
           >
             back

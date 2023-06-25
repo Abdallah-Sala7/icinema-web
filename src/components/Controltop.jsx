@@ -44,15 +44,15 @@ function Controltop(props) {
       <div className="flex items-center gap-5">
         <div className="w-12 h-12 rounded-full border-2 border-primary overflow-hidden">
           <img
-            src={userData.cover}
+            src={userData?.cover}
             alt=""
             className="w-full h-full object-cover"
           />
         </div>
 
         <div className="hidden text-dark dark:text-white sm:block">
-          <h1 className="font-light">{userData.name}</h1>
-          <h2 className="font-light">{userData.email}</h2>
+          <h1 className="font-light">{userData?.name}</h1>
+          <h2 className="font-light">{userData?.email}</h2>
         </div>
       </div>
       {props.entry === "movies_about" ? movies_about : null}

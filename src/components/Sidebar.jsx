@@ -83,7 +83,7 @@ function Sidebar() {
                 }
               >
                 <img
-                  src={userData.cover}
+                  src={userData?.cover}
                   alt="admin icon"
                   className="w-6 h-6 object-cover mr-3 rounded-full border-2 border-primary"
                 />

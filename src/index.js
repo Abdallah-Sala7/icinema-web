@@ -23,7 +23,11 @@ import WithGaurd from "./components/WithGaurd";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <WithGaurd><RootLayout /></WithGaurd> ,
+    element: (
+      <WithGaurd>
+        <RootLayout />
+      </WithGaurd>
+    ),
     children: [
       { index: true, element: <Admin /> },
       { path: "profile", element: <Profile /> },
@@ -50,7 +54,7 @@ const router = createBrowserRouter([
           { index: true, element: <Boking /> },
           {
             path: "/boking/:id",
-            element: <BookMovie />
+            element: <BookMovie />,
           },
         ],
       },

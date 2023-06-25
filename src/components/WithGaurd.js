@@ -5,7 +5,7 @@ const WithGaurd = ({ children }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!localStorage.getItem("user")) {
+    if (!localStorage.getItem("isAuth")) {
       navigate("/auth/login");
     }
   }, [localStorage, navigate]);
